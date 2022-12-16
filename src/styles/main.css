@@ -1,0 +1,100 @@
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html.dark {
+  background: #121212;
+  color-scheme: dark;
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: rgb(13,148,136);
+  opacity: 0.75;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+html.dark .v-select {
+  --vs-controls-color: #664cc3;
+  --vs-border-color: #664cc3;
+
+  --vs-dropdown-bg: #282c34;
+  --vs-dropdown-color: #cc99cd;
+  --vs-dropdown-option-color: #cc99cd;
+
+  --vs-selected-bg: #664cc3;
+  --vs-selected-color: #eeeeee;
+
+  --vs-search-input-color: #eeeeee;
+
+  --vs-dropdown-option--active-bg: #664cc3;
+  --vs-dropdown-option--active-color: #eeeeee;
+}
+
+
+.normal {
+    background-color: rgba(168, 167, 122, 0.7) !important;
+}
+.fire {
+    background-color: rgba(238, 129, 48, 0.7) !important;
+}
+.water {
+    background-color: rgba(99, 144, 240, 0.7) !important;
+}
+.electric {
+    background-color: rgba(247, 208, 44, 0.7) !important;
+}
+.grass {
+    background-color: rgba(122, 199, 76, 0.7) !important;
+}
+.ice {
+    background-color: rgba(150, 217, 214, 0.7) !important;
+}
+.fighting {
+    background-color: rgba(194, 46, 40, 0.7) !important;
+}
+.poison {
+    background-color: rgba(163, 62, 161, 0.7) !important;
+}
+.ground {
+    background-color: rgba(226, 191, 101, 0.7) !important;
+}
+.flying {
+    background-color: rgba(169, 143, 243, 0.7) !important;
+}
+.psychic {
+    background-color: rgba(249, 85, 135, 0.7) !important;
+}
+.bug {
+    background-color: rgba(166, 185, 26, 0.7) !important;
+}
+.rock {
+    background-color: rgba(182, 161, 54, 0.7) !important;
+}
+.ghost {
+    background-color: rgba(115, 87, 151, 0.7) !important;
+}
+.dragon {
+    background-color: rgba(111, 53, 252, 0.7) !important;
+}
+:not(html).dark {
+    background-color: rgba(112, 87, 70, 0.7) !important;
+}
+.steel {
+    background-color: rgba(183, 183, 206, 0.7) !important;
+}
+.fairy {
+    background-color: rgba(214, 133, 173, 0.7) !important;
+}

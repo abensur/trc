@@ -1,0 +1,516 @@
+[
+    {
+      "name": "amoonguss",
+      "abilities": [
+        "Effect Spore",
+        "Regenerator"
+      ]
+    },
+    {
+      "name": "annihilape",
+      "abilities": [
+        "Vital Spirit",
+        "Inner Focus",
+        "Defiant"
+      ]
+    },
+    {
+      "name": "armarouge",
+      "abilities": [
+        "Flash Fire",
+        "Weak Armor"
+      ]
+    },
+    {
+      "name": "avalugg",
+      "abilities": [
+        "Own Tempo",
+        "Ice Body",
+        "Sturdy"
+      ]
+    },
+    {
+      "name": "baxcalibur",
+      "abilities": [
+        "Thermal Exchange",
+        "Ice Body"
+      ]
+    },
+    {
+      "name": "blissey",
+      "abilities": [
+        "Natural Cure",
+        "Serene Grace"
+      ]
+    },
+    {
+      "name": "bombirdier",
+      "abilities": [
+        "Big Pecks",
+        "Keen Eye",
+        "Rock Throwing"
+      ]
+    },
+    {
+      "name": "breloom",
+      "abilities": [
+        "Effect Spore",
+        "Poison Heal",
+        "Techniqueian"
+      ]
+    },
+    {
+      "name": "ceruledge",
+      "abilities": [
+        "Flash Fire",
+        "Weak Armor"
+      ]
+    },
+    {
+        "name": "cetitan",
+        "abilities": [
+            "Thick Fat",
+            "Slush Rush",
+            "Sheer Force"
+        ]
+    },
+    {
+      "name": "clawitzer",
+      "abilities": [
+        "Mega Launcher"
+      ]
+    },
+    {
+      "name": "clodsire",
+      "abilities": [
+        "Poison Point",
+        "Water Absorb",
+        "Unaware"
+      ]
+    },
+    {
+      "name": "corviknight",
+      "abilities": [
+        "Pressure",
+        "Unnerve",
+        "Mirror Armor"
+      ]
+    },
+    {
+      "name": "cyclizar",
+      "abilities": [
+        "Shed Skin",
+        "Regenerator"
+      ]
+    },
+    {
+      "name": "dachsbun",
+      "abilities": [
+        "Well-Baked Body",
+        "Aroma Veil"
+      ]
+    },
+    {
+      "name": "ditto",
+      "abilities": [
+        "Limber",
+        "Imposter"
+      ]
+    },
+    {
+      "name": "dondozo",
+      "abilities": [
+        "Unaware",
+        "Oblivious"
+      ]
+    },
+    {
+      "name": "dragalge",
+      "abilities": [
+        "Poison Point",
+        "Poison Touch",
+        "Adaptability"
+      ]
+    },
+    {
+      "name": "dragapult",
+      "abilities": [
+        "Clear Body",
+        "Infiltrator"
+      ]
+    },
+    {
+      "name": "dragonite",
+      "abilities": [
+        "Inner Focus",
+        "Multiscale"
+      ]
+    },
+    {
+      "name": "espeon",
+      "abilities": [
+        "Synchronize",
+        "Magic Bounce"
+      ]
+    },
+    {
+      "name": "farigiraf",
+      "abilities": [
+        "Cud Chew",
+        "Armor Tail"
+      ]
+    },
+    {
+      "name": "flareon",
+      "abilities": [
+        "Flash Fire",
+        "Guts"
+      ]
+    },
+    {
+      "name": "frosmoth",
+      "abilities": [
+        "Shield Dust",
+        "Ice Scales"
+      ]
+    },
+    {
+      "name": "gallade",
+      "abilities": [
+        "Steadfast",
+        "Bite",
+        "Justified"
+      ]
+    },
+    {
+      "name": "garchomp",
+      "abilities": [
+        "Sand Veil",
+        "Rough Skin"
+      ]
+    },
+    {
+      "name": "gardevoir",
+      "abilities": [
+        "Synchronize",
+        "Trace",
+        "Telepathy"
+      ]
+    },
+    {
+      "name": "garganacl",
+      "abilities": [
+        "Purifying S",
+        "Sturdy",
+        "Clear Body"
+      ]
+    },
+    {
+      "name": "gengar",
+      "abilities": [
+        "Cursed Body"
+      ]
+    },
+    {
+      "name": "glaceon",
+      "abilities": [
+        "Snow Cloak",
+        "Ice Body"
+      ]
+    },
+    {
+      "name": "glimmora",
+      "abilities": [
+        "Toxic Debris",
+        "Corrosion"
+      ]
+    },
+    {
+      "name": "goodra",
+      "abilities": [
+        "Sap Sipper",
+        "Hydration",
+        "Gooey"
+      ]
+    },
+    {
+      "name": "grafaiai",
+      "abilities": [
+        "Unburden",
+        "Poison Touch"
+      ]
+    },
+    {
+      "name": "gyarados",
+      "abilities": [
+        "Intimidate",
+        "Moxie"
+      ]
+    },
+    {
+      "name": "haxorus",
+      "abilities": [
+        "Rivalry",
+        "Mold Breaker",
+        "Unnerve"
+      ]
+    },
+    {
+      "name": "heracross",
+      "abilities": [
+        "Swarm",
+        "Guts",
+        "Moxie"
+      ]
+    },
+    {
+      "name": "hippowdon",
+      "abilities": [
+        "Sand Stream",
+        "Sand Force"
+      ]
+    },
+    {
+      "name": "hydreigon",
+      "abilities": [
+        "Levitate"
+      ]
+    },
+    {
+      "name": "jolteon",
+      "abilities": [
+        "Volt Absorb",
+        "Quick Feet"
+      ]
+    },
+    {
+      "name": "kilowattrel",
+      "abilities": [
+        "Volt Absorb",
+        "Competitive"
+      ]
+    },
+    {
+      "name": "kingambit",
+      "abilities": [
+        "Defiant",
+        "Supreme Overlord",
+        "Pressure"
+      ]
+    },
+    {
+      "name": "klawf",
+      "abilities": [
+        "Anger Shell",
+        "Shell Armor",
+        "Regenerator"
+      ]
+    },
+    {
+      "name": "leafeon",
+      "abilities": [
+        "Chlorophyll",
+        "Leaf Guard"
+      ]
+    },
+    {
+      "name": "lycanroc",
+      "abilities": [
+        "Tough Claws"
+      ]
+    },
+    {
+      "name": "mabosstiff",
+      "abilities": [
+        "Intimidate",
+        "Guard Dog",
+        "Stakeout"
+      ]
+    },
+    {
+      "name": "magnezone",
+      "abilities": [
+        "Magnet Pull",
+        "Sturdy",
+        "Analytic"
+      ]
+    },
+    {
+      "name": "maushold",
+      "abilities": [
+        "Friend Guard",
+        "Cheek Pouch"
+      ]
+    },
+    {
+      "name": "mimikyu",
+      "abilities": [
+        "Disguise"
+      ]
+    },
+    {
+      "name": "orthworm",
+      "abilities": [
+        "Earth Eater",
+        "Sand Veil"
+      ]
+    },
+    {
+      "name": "pawmot",
+      "abilities": [
+        "Volt Absorb",
+        "Natural Cure",
+        "Iron Fist"
+      ]
+    },
+    {
+      "name": "pelipper",
+      "abilities": [
+        "Keen Eye",
+        "Drizzle",
+        "Rain Dish"
+      ]
+    },
+    {
+      "name": "pincurchin",
+      "abilities": [
+        "Lightning Rod",
+        "Electric Surge"
+      ]
+    },
+    {
+      "name": "revavroom",
+      "abilities": [
+        "Overcoat",
+        "Filter"
+      ]
+    },
+    {
+      "name": "salamence",
+      "abilities": [
+        "Intimidate",
+        "Moxie"
+      ]
+    },
+    {
+      "name": "scizor",
+      "abilities": [
+        "Swarm",
+        "Techniqueian",
+        "Light Metal"
+      ]
+    },
+    {
+      "name": "slowking",
+      "abilities": [
+        "Oblivious",
+        "Own Tempo",
+        "Regenerator"
+      ]
+    },
+    {
+      "name": "staraptor",
+      "abilities": [
+        "Intimidate",
+        "Reckless"
+      ]
+    },
+    {
+      "name": "sylveon",
+      "abilities": [
+        "Cute Charm",
+        "Pixilate",
+        "Glimmor"
+      ]
+    },
+    {
+      "name": "talonflame",
+      "abilities": [
+        "Flame Body",
+        "Gale Wings"
+      ]
+    },
+    {
+      "name": "tauros",
+      "abilities": [
+        "Intimidate",
+        "Ability",
+        "Cud Chew"
+      ]
+    },
+    {
+      "name": "tauros aqua",
+      "abilities": [
+        "Intimidate",
+        "Ability",
+        "Cud Chew"
+      ]
+    },
+    {
+      "name": "tauros blaze",
+      "abilities": [
+        "Intimidate",
+        "Ability",
+        "Cud Chew"
+      ]
+    },
+    {
+      "name": "tinkaton",
+      "abilities": [
+        "Mold Breaker",
+        "Own Tempo",
+        "Pickpocket"
+      ]
+    },
+    {
+      "name": "toedscruel",
+      "abilities": [
+        "Mycelium",
+        "Might"
+      ]
+    },
+    {
+      "name": "torkoal",
+      "abilities": [
+        "White Smoke",
+        "Drought",
+        "Shell Armor"
+      ]
+    },
+    {
+      "name": "toxapex",
+      "abilities": [
+        "Merciless",
+        "Limber",
+        "Regenerator"
+      ]
+    },
+    {
+      "name": "tyranitar",
+      "abilities": [
+        "Sandtsream",
+        "Unnerve"
+      ]
+    },
+    {
+      "name": "umbreon",
+      "abilities": [
+        "Synchronize",
+        "Inner Focus"
+      ]
+    },
+    {
+      "name": "vaporeon",
+      "abilities": [
+        "Water Absorb",
+        "Hydration"
+      ]
+    },
+    {
+      "name": "volcarona",
+      "abilities": [
+        "Flame Body",
+        "Warm"
+      ]
+    }
+  ]

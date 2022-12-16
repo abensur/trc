@@ -1,0 +1,193 @@
+{
+    "atk": {
+        "pokemon": [
+            "tauros",
+            "tauros blaze",
+            "tauros aqua",
+            "gyarados",
+            "flareon",
+            "dragonite",
+            "scizor",
+            "heracross",
+            "tyranitar",
+            "breloom",
+            "salamence",
+            "staraptor",
+            "garchomp",
+            "leafeon",
+            "gallade",
+            "haxorus",
+            "lycanroc",
+            "pincurchin",
+            "revavroom",
+            "baxcalibur",
+            "pawmot",
+            "bombirdier",
+            "mabosstiff",
+            "ceruledge",
+            "kingambit",
+            "annihilape"
+        ],
+        "drops": [
+            "Muscle Feather",
+            "Star Piece",
+            "Comet Shard",
+            "Spicy Herba Mystica",
+            "Adamant Mint",
+            "Lonely Mint",
+            "Naughty Mint",
+            "Brave Mint"
+        ]
+    },
+    "def": {
+        "pokemon": [
+            "pelipper",
+            "torkoal",
+            "hippowdon",
+            "avalugg",
+            "toxapex",
+            "corviknight",
+            "orthworm",
+            "klawf",
+            "garganacl",
+            "dachsbun"
+        ],
+        "drops": [
+            "Resist Feather",
+            "Big Pearl",
+            "Pearl String",
+            "Salty Herba Mystica",
+            "Bold Mint",
+            "Impish Mint",
+            "Lax Mint",
+            "Relaxed Mint"
+        ]
+    },
+    "spa": {
+        "pokemon": [
+            "gengar",
+            "espeon",
+            "gardevoir",
+            "magnezone",
+            "volcarona",
+            "dragalge",
+            "clawitzer",
+            "sylveon",
+            "glimmora",
+            "armarouge"
+        ],
+        "drops": [
+            "Genius Feather",
+            "Star Piece",
+            "Comet Shard",
+            "Bitter Herba Mystica",
+            "Modest Mint",
+            "Mild Mint",
+            "Rash Mint",
+            "Quiet Mint"
+        ]
+    },
+    "spd": {
+        "pokemon": [
+            "umbreon",
+            "slowking",
+            "goodra",
+            "mimikyu",
+            "frosmoth",
+            "tinkaton",
+            "toedscruel",
+            "clodsire"
+        ],
+        "drops": [
+            "Clever Feather",
+            "Big Pearl",
+            "Pearl String",
+            "Sour Herba Mystica",
+            "Calm Mint",
+            "Gentle Mint",
+            "Careful Mint",
+            "Sassy Mint"
+        ]
+    },
+    "spe": {
+        "pokemon": [
+            "ditto",
+            "jolteon",
+            "talonflame",
+            "dragapult",
+            "maushold",
+            "cyclizar",
+            "kilowattrel",
+            "grafaiai"
+        ],
+        "drops": [
+            "Swift Feather",
+            "Big Mushroom",
+            "Balm Mushroom",
+            "Sweet Herba Mystica",
+            "Jolly Mint",
+            "Naive Mint",
+            "Hasty Mint",
+            "Timid Mint"
+        ]
+    },
+    "hp": {
+        "pokemon": [
+            "vaporeon",
+            "blissey",
+            "amoonguss",
+            "farigiraf",
+            "dondozo",
+            "cetitan"
+        ],
+        "drops": [
+            "Health Feather",
+            "Big Mushroom",
+            "Balm Mushroom",
+            "Spicy Herba Mystica",
+            "Sweet Herba Mystica",
+            "Salty Herba Mystica",
+            "Bitter Herba Mystica",
+            "Sour Herba Mystica"
+        ]
+    },
+    "images": {
+        "Adamant Mint": "../src/assets/images/loot/mint-atk.png",
+        "Balm Mushroom": "../src/assets/images/loot/balm-mushroom.png",
+        "Big Mushroom": "../src/assets/images/loot/big-mushroom.png",
+        "Big Pearl": "../src/assets/images/loot/big-pearl.png",
+        "Bitter Herba Mystica": "../src/assets/images/loot/bitter-herba-mystica.png",
+        "Bold Mint": "../src/assets/images/loot/mint-def.png",
+        "Brave Mint": "../src/assets/images/loot/mint-atk.png",
+        "Calm Mint": "../src/assets/images/loot/mint-spd.png",
+        "Careful Mint": "../src/assets/images/loot/mint-spd.png",
+        "Clever Feather": "../src/assets/images/loot/clever-feather.png",
+        "Comet Shard": "../src/assets/images/loot/comet-shard.png",
+        "Genius Feather": "../src/assets/images/loot/genius-feather.png",
+        "Gentle Mint": "../src/assets/images/loot/mint-spd.png",
+        "Hasty Mint": "../src/assets/images/loot/mint-spe.png",
+        "Health Feather": "../src/assets/images/loot/health-feather.png",
+        "Impish Mint": "../src/assets/images/loot/mint-def.png",
+        "Jolly Mint": "../src/assets/images/loot/mint-spe.png",
+        "Lax Mint": "../src/assets/images/loot/mint-def.png",
+        "Lonely Mint": "../src/assets/images/loot/mint-atk.png",
+        "Mild Mint": "../src/assets/images/loot/mint-spa.png",
+        "Modest Mint": "../src/assets/images/loot/mint-spa.png",
+        "Muscle Feather": "../src/assets/images/loot/muscle-feather.png",
+        "Naive Mint": "../src/assets/images/loot/mint-spe.png",
+        "Naughty Mint": "../src/assets/images/loot/mint-atk.png",
+        "Pearl String": "../src/assets/images/loot/pearl-string.png",
+        "Quiet Mint": "../src/assets/images/loot/mint-spa.png",
+        "Rash Mint": "../src/assets/images/loot/mint-spa.png",
+        "Relaxed Mint": "../src/assets/images/loot/mint-def.png",
+        "Resist Feather": "../src/assets/images/loot/resist-feather.png",
+        "Salty Herba Mystica": "../src/assets/images/loot/salty-herba-mystica.png",
+        "Sassy Mint": "../src/assets/images/loot/mint-spd.png",
+        "Sour Herba Mystica": "../src/assets/images/loot/sour-herba-mystica.png",
+        "Spicy Herba Mystica": "../src/assets/images/loot/spicy-herba-mystica.png",
+        "Star Piece": "../src/assets/images/loot/star-piece.png",
+        "Sweet Herba Mystica": "../src/assets/images/loot/sweet-herba-mystica.png",
+        "Swift Feather": "../src/assets/images/loot/swift-feather.png",
+        "Timid Mint": "../src/assets/images/loot/mint-spe.png"
+    }
+}

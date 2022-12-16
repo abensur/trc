@@ -1,0 +1,31 @@
+select:
+  pokemons: Choose a Pokémon
+  types: Raid Tera
+  stats: Choose a loot category
+
+button:
+  toggle_dark: Toggle dark mode
+  go: GO
+  home: Home
+  drop: Drops
+  back: Back
+
+raid:
+  uva: Spawns in Violet
+  naranja: Spawns in Scarlet
+  taunt: taunt threat
+  ability: ability
+  damage: common dmg type
+  defense: def / sp. def
+
+taunt:
+  no: no
+  low: low
+  medium: medium
+  high: high
+  very_high: very high
+
+loading:
+  dmg_rel: Loading damage relations
+
+not-found: Not found
