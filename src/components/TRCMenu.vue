@@ -21,7 +21,7 @@ const { t } = useI18n()
       Tera Raid Companion
     </RouterLink>
 
-    <a class="icon-btn mx-2" href="https://github.com/abensur/tera-raid-companion" target="_blank" title="Github">
+    <a class="icon-btn mx-2" href="https://github.com/abensur/trc" target="_blank" title="Github">
       <div i-carbon-logo-github />
     </a>
   </nav>
