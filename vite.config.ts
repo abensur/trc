@@ -1,6 +1,6 @@
 import path from 'path'
 import { defineConfig } from 'vite'
-import ViteRadar from 'vite-plugin-radar'
+import { VitePluginRadar } from 'vite-plugin-radar'
 import Preview from 'vite-plugin-vue-component-preview'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
@@ -71,6 +71,12 @@ export default defineConfig({
     // see unocss.config.ts for config
     Unocss(),
 
+    VitePluginRadar({
+      analytics: {
+        id: 'G-4E16L8SR0R',
+      },
+    }),
+
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
       registerType: 'autoUpdate',
@@ -114,12 +120,6 @@ export default defineConfig({
     // https://github.com/webfansplz/vite-plugin-vue-inspector
     Inspector({
       toggleButtonVisibility: 'never',
-    }),
-
-    ViteRadar({
-      analytics: {
-        id: 'G-4E16L8SR0R',
-      },
     }),
   ],
 
