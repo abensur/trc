@@ -1,6 +1,7 @@
 {
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@7.17.1",
   "scripts": {
     "build": "vite-ssg build",
     "dev": "vite --port 3333 --open",
@@ -13,7 +14,7 @@
   },
   "dependencies": {
     "@unocss/reset": "^0.47.6",
-    "@vueuse/core": "^9.6.0",
+    "@vueuse/core": "^9.7.0",
     "@vueuse/head": "^1.0.22",
     "fuse.js": "^6.6.2",
     "nprogress": "^0.2.0",
@@ -31,11 +32,11 @@
     "@types/nprogress": "^0.2.0",
     "@types/vue-select": "^3.16.2",
     "@vitejs/plugin-vue": "^4.0.0",
-    "@vue-macros/volar": "^0.5.4",
+    "@vue-macros/volar": "^0.5.6",
     "@vue/test-utils": "^2.2.6",
     "critters": "^0.0.16",
     "cross-env": "^7.0.3",
-    "eslint": "^8.29.0",
+    "eslint": "^8.30.0",
     "https-localhost": "^4.7.1",
     "pnpm": "^7.18.2",
     "taze": "^0.8.4",
@@ -43,17 +44,17 @@
     "unocss": "^0.47.6",
     "unplugin-auto-import": "^0.12.1",
     "unplugin-vue-components": "^0.22.12",
-    "unplugin-vue-macros": "^1.0.3",
-    "vite": "^4.0.1",
+    "unplugin-vue-macros": "^1.1.1",
+    "vite": "^4.0.2",
     "vite-plugin-inspect": "^0.7.10",
     "vite-plugin-pages": "^0.28.0",
     "vite-plugin-pwa": "^0.14.0",
-    "vite-plugin-vue-component-preview": "^0.3.3",
-    "vite-plugin-vue-inspector": "^2.0.1",
+    "vite-plugin-vue-component-preview": "^0.3.4",
+    "vite-plugin-vue-inspector": "^2.0.4",
     "vite-plugin-vue-layouts": "^0.7.0",
     "vite-ssg": "^0.22.1",
     "vite-ssg-sitemap": "^0.4.3",
-    "vitest": "^0.25.8",
-    "vue-tsc": "^1.0.13"
+    "vitest": "^0.26.0",
+    "vue-tsc": "^1.0.14"
   }
 }
