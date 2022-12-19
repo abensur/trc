@@ -1,20 +1,20 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
-interface Raid {
-  pokemon: string
-  tera: string
-}
-
 export const useRaidStore = defineStore('raid', () => {
-  const raid = ref<Raid | null>(null)
+  const images = ref([] as any)
 
-  function setNewRaid(newRaid: Raid) {
-    raid.value = { ...newRaid }
+  function loadImage(image: any) {
+    images.value.push(image)
+  }
+
+  function getImage(code: string | number) {
+    return images.value.find((image: any) => image.code === code.toString()).url
   }
 
   return {
-    setNewRaid,
-    raid,
+    loadImage,
+    getImage,
+    images,
   }
 })
 

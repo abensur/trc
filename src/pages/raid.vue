@@ -7,7 +7,7 @@ const drops: any = inject('drops')
 const inferDamageType: any = inject('inferDamageType')
 const getTauntSuggestion: any = inject('getTauntSuggestion')
 const stats = inject('stats')
-
+const raidStore = useRaidStore()
 const go = (pokemon: string) => {
   router.push(`/raid/${pokemon}`)
 }
@@ -73,7 +73,7 @@ const computedRaids = computed(() => {
     <div pb-10 w-full>
       <div grid grid-cols-4 w-full gap-2>
         <div v-for="(raid, index) in computedRaids" :key="index" border text-center pt-2 cursor-pointer transition shadow-md hover:shadow-sm @click="go(raid.name)">
-          <img m-auto w-50px h-50px :src="raid.image" :alt="raid.name">
+          <img m-auto w-50px h-50px :src="raidStore.getImage(raid.code)" :alt="raid.name">
           <span text-12px>{{ raid.name }}</span>
         </div>
       </div>

@@ -1,180 +1,141 @@
 <script lang="ts" setup>
-import movePhy from '~/assets/images/move-physical.png'
-import moveSpe from '~/assets/images/move-special.png'
-import moveSta from '~/assets/images/move-status.png'
-import naranjaAcademy from '~/assets/images/naranja-academy.png'
-import uvaAcademy from '~/assets/images/uva-academy.png'
-const props = defineProps({
-  raid: {
-    type: Object,
-    required: true,
-  },
-  tera: {
-    type: String,
-    required: false,
-  },
-})
-const { t } = useI18n()
-// const activeTera = $ref(props.tera)
+const props = defineProps<{ pokemon: string; tera?: string }>()
+const raids: any = inject('raids')
+const drops: any = inject('drops')
+const raidStore = useRaidStore()
+const getTauntSuggestion: any = inject('getTauntSuggestion')
+const inferDamageType: any = inject('inferDamageType')
+const currentRaid = ref<any>(raids.find((it: any) => it.name === props.pokemon))
+const currentDrops = Object.keys(drops)
+  .map((it) => {
+    const item = drops[it]
+    item.category = it
+    return item
+  }).find(it => it.pokemon.includes(props.pokemon))
 
-const getCategory = (category: string) => {
-  switch (category) {
-    case 'physical':
-      return movePhy
-    case 'special':
-      return moveSpe
-    default:
-      return moveSta
-  }
+const categoriesMap: any = {
+  atk: raidStore.getImage('muscle-feather'),
+  spe: raidStore.getImage('swift-feather'),
+  def: raidStore.getImage('resist-feather'),
+  spa: raidStore.getImage('genius-feather'),
+  spd: raidStore.getImage('clever-feather'),
+  hp: raidStore.getImage('health-feather'),
 }
-
-const getTauntSuggestion = (raid: any) => {
-  const count = (raid.moves.concat(raid.additional_moves || [])).reduce((acc: any, move: any) => {
-    acc[move.category] += 1
-    return acc
-  }, { physical: 0, status: 0, special: 0 })
-
-  let suggestion = ''
-  switch (count.status) {
-    case 0:
-      suggestion = t('taunt.no')
-      break
-    case 1:
-      suggestion = t('taunt.low')
-      break
-    case 2:
-      suggestion = t('taunt.medium')
-      break
-    case 3:
-      suggestion = t('taunt.high')
-      break
-    default:
-      suggestion = t('taunt.very_high')
-      break
-  }
-
-  return suggestion
-}
-
-const inferDamageType = (raid: any) => {
-  const count = (raid.moves.concat(raid.additional_moves || [])).reduce((acc: any, move: any) => {
-    if (move.category !== 'status')
-      acc[move.category] += 1
-    return acc
-  }, { physical: 0, special: 0 })
-
-  const maxType = Object.keys(count).reduce((a, b) => count[a] > count[b] ? a : b)
-
-  return maxType
-}
-
-const moves = () => {
-  const temp = props.raid.moves.concat(props.raid.additional_moves || [])
-  while (temp.length < 8)
-    temp.push({})
-
-  return temp
-}
+const categoryHref = categoriesMap[currentDrops.category]
 
 const getDefenseStats = (raid: any) => {
   const { defense, spDefense } = raid.stats
 
   return `${defense} / ${spDefense}`
 }
+const getAbilityOpacity = (ability: string) => {
+  switch (ability) {
+    case 'Hidden Ability':
+      return ['', 'opacity-40 grayscale']
+    case 'Hidden Possible':
+    case 'Random':
+      return ['', '']
+    case 'Standard':
+      return ['opacity-40 greyscale', '']
+    default:
+      return ['', '']
+  }
+}
 </script>
 
 <template>
   <div>
-    <aside>
-      <div flex flex-wrap px-2 py-3 items-center>
-        <a
-          capitalize
-          text-blue
-          text-2xl
-          :href="props.raid.url"
-          target="_blank"
-        >
-          {{ props.raid.name }}
+    <header flex flex-wrap items-start pb-2>
+      <div>
+        <a capitalize color-blue :href="currentRaid.url" target="_blank">
+          <img min-h-129px class="top-2.5" w-130px :src="raidStore.getImage(currentRaid.code)" :alt="pokemon">
+          <div pt-2 flex items-center justify-center>
+            {{ pokemon }}<div ml-1 text-13px i-carbon-launch />
+          </div>
         </a>
-
-        <img
-          :class="{
-            'opacity-40 grayscale': props.raid.game === 'Scarlet',
-          }" ml-auto w-10 h-10 :src="uvaAcademy" :alt="t('raid.uva')"
-        >
-        <img
-          :class="{
-            'opacity-40 grayscale': props.raid.game === 'Violet',
-          }" w-10 h-10 :src="naranjaAcademy" :alt="t('raid.naranja')"
-        >
       </div>
-      <!-- <TRCSelect v-model="activeTera" navigate mx-2 mb-2 list="type" /> -->
-      <TRCPokemon :pokemon="props.raid.name" :type="props.tera" />
+      <div relative flex-1 px-4>
+        <div absolute top-0 right-0>
+          <img
+            :class="{
+              'opacity-40 grayscale': currentRaid.game === 'Violet',
+            }" w-10 h-10 :src="raidStore.getImage('book-scarlet')"
+          >
+          <img
+            :class="{
+              'opacity-40 grayscale': currentRaid.game === 'Scarlet',
+            }" w-10 h-10 :src="raidStore.getImage('book-violet')"
+          >
+        </div>
+        <dl flex flex-wrap items-center>
+          <dd>
+            <RouterLink w-80px :to="`/loot/${currentDrops.category}`" flex items-center btn bg-transparent color-dark hover:color-light dark:color-light border-purple border-1 px-2 w-fit>
+              <img w-25px :src="categoryHref" alt="">
+              <span ml-2 uppercase font-mono>
+                <div v-if="currentDrops.category === 'hp'" w-28px />
+                {{ currentDrops.category }}
+              </span>
+            </RouterLink>
+          </dd>
+          <dt class="w-1/2" font-bold text-10px text-left indent-2 font-mono>
+            - Loot type
+          </dt>
+          <dd>
+            <div w-78px h-33px flex items-center justify-center mx-1px color-dark dark:color-light>
+              <img w-25px :src="raidStore.getImage('move-status')" alt="">
+              <span ml-2 uppercase font-mono>
+                &nbsp;&nbsp;{{ getTauntSuggestion(currentRaid, true) }}
+              </span>
+            </div>
+          </dd>
+          <dt class="w-1/2" font-bold text-10px text-left indent-2 font-mono>
+            - # Status
+          </dt>
 
-      <hr>
-      <div class="text-left px-2 pt-2 pb-1 font-mono">
-        <dl class="text-3.5" grid grid-cols-2 grid-rows-2 gap-1>
-          <div border px-2 py-1>
-            <dt>{{ t('raid.taunt') }}:</dt>
-            <dd text-right>
-              {{ getTauntSuggestion(raid) }}
-            </dd>
-          </div>
-          <div border px-2 py-1>
-            <dt>{{ t('raid.ability') }}:</dt>
-            <dd text-right>
-              {{ props.raid.ability.toLowerCase() }}
-            </dd>
-          </div>
-          <div border px-2 py-1>
-            <dt>{{ t('raid.damage') }}:</dt>
-            <dd text-right>
-              {{ inferDamageType(raid) }}
-            </dd>
-          </div>
-          <div border px-2 py-1>
-            <dt>{{ t('raid.defense') }}:</dt>
-            <dd text-right>
-              {{ getDefenseStats(raid) }}
-            </dd>
-          </div>
+          <dd>
+            <div w-78px h-33px flex items-center justify-center mx-1px color-dark dark:color-light>
+              <img w-25px relative left--1px :src="raidStore.getImage('move-physical')" alt="">
+              <span font-mono uppercase class="mx-1px">
+                {{ inferDamageType(currentRaid) === 'physical' ? '>' : '<' }}
+              </span>
+              <img w-25px relative right--1px :src="raidStore.getImage('move-special')" alt="">
+            </div>
+          </dd>
+          <dt class="w-1/2" font-bold text-10px text-left indent-2 font-mono>
+            - Dmg type
+          </dt>
+
+          <dd>
+            <div w-78px h-33px flex items-center justify-center mx-1px color-dark dark:color-light>
+              <span font-mono text-12px uppercase class="mx-1px">
+                {{ getDefenseStats(currentRaid) }}
+              </span>
+            </div>
+          </dd>
+          <dt class="w-1/2" font-bold text-10px text-left indent-2 font-mono>
+            - DEF / SPD
+          </dt>
+
+          <dd>
+            <div w-78px h-33px flex items-center justify-center mx-1px color-dark dark:color-light>
+              <img :class="getAbilityOpacity(currentRaid.ability)[0]" w-25px relative left--1px :src="raidStore.getImage('ability-patch')" alt="">
+              <span font-mono uppercase class="mx-1px">
+                  &nbsp;
+              </span>
+              <img :class="getAbilityOpacity(currentRaid.ability)[1]" w-25px relative right--1px :src="raidStore.getImage('ability-capsule')" alt="">
+            </div>
+          </dd>
+          <dt class="w-1/2" font-bold text-10px text-left indent-2 font-mono>
+            - ability
+          </dt>
         </dl>
       </div>
-    </aside>
-    <main>
-      <section grid grid-cols-4 gap-1 mx-2 mb-2 border-b pb-2>
-        <div
-          v-for="(move, index) in moves()"
-          :key="`move-${index}`"
-          class="bg-light-700"
-          :class="move.type"
-          relative
-          flex
-          flex-wrap
-        >
-          <template v-if="move.name">
-            <a relative z-1 m-auto font-bold :href="move.url" target="_blank">
-              <mark text-blue dark:text-blue bg-black bg-opacity-50>&nbsp;{{ move.name }}&nbsp;</mark>
-            </a>
-            <img
-              class="drop-shadow absolute left-50% top-50% transform -translate-x-1/2 -translate-y-1/2"
-              :src="getCategory(move.category)"
-              :alt="move.category"
-            >
-          </template>
-          <template v-else>
-            <div dark:color-dark-500 i-carbon-undefined text-32px m-auto opacity-50 />
-          </template>
-        </div>
-      </section>
-    </main>
+    </header>
+    <TRCAbilities :raid="currentRaid" mb-2 />
+    <TRCMoves :raid="currentRaid" />
   </div>
 </template>
 
 <style scoped>
-main > section > div {
-  height: 90px;
-  font-size: 10px;
-  text-transform: uppercase;
-}
+
 </style>

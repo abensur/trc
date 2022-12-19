@@ -6,17 +6,23 @@ const props = defineProps<{
 const raids: any = inject('raids')
 const drops: any = inject('drops')
 const router = useRouter()
+const raidStore = useRaidStore()
 
 const gallery = ref<any[]>([])
 const currentDrops = props.loot
 
-currentDrops.forEach((value: string) => {
-  let image = ''
+currentDrops.forEach(async (value: string) => {
+  let image: any = ''
 
-  if (props.type === 'drops')
-    image = drops.images[value]
-  else if (props.type === 'pokemon')
-    image = raids.find((it: any) => it.name === value).image
+  if (props.type === 'drops') {
+    const dropImage = drops.images[value]
+    image = dropImage
+  }
+
+  else if (props.type === 'pokemon') {
+    const code = raids.find((it: any) => it.name === value).code
+    image = raidStore.getImage(`${code}`)
+  }
 
   gallery.value.push({
     src: image,

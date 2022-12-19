@@ -6,7 +6,7 @@
       flex-col
       h-full
       max-h-800px
-      max-w-500px
+      max-w-450px
       ma-auto
       text-gray-700
       dark:text-gray-200

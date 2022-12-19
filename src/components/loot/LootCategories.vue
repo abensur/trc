@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-// const modules = import.meta.glob('../src/assets/images/**/*-feather.png')
 const gallery: any = ref([])
 const stats = inject('stats')
 
@@ -14,7 +13,7 @@ const categoriesMap: any = {
 
 for (const stat of (stats as any)) {
   const name = categoriesMap[stat]
-  const href = `../src/assets/images/loot/${name}.png`
+  const href = useRaidStore().getImage(name)
   const image = { href, name, stat }
   gallery.value.push(image)
 }

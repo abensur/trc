@@ -20,20 +20,9 @@ const teraValue = computed({
       <TRCBack />
       <TRCSelect v-model="teraValue" ml-2 flex-1 :list="SelectList.TYPES" />
     </header>
-    <h1>{{ pokemon }}</h1>
-    <h2> {{ tera }}</h2>
-    <ul>
-      <li>pokemon name (enum)</li>
-      <li>game version (enum)</li>
-      <li>taunt threat (enum)</li>
-      <li>common dmg type (enum)</li>
-      <li>ability (enum)</li>
-      <li>def / sp. def (number / number)</li>
-      <li>moves (array)</li>
-      <li>loot (array)</li>
-      <li>loot category (enum)</li>
-      <li>type damage relations</li>
-    </ul>
+
+    <TRCRaidDetail :pokemon="pokemon" />
+    <TRCDamageRelations :tera="tera" />
   </div>
 </template>
 

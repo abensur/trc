@@ -38,8 +38,6 @@ const parseResponses = (responses) => {
       stats,
     })
 
-    console.log(pkmn.name, stats)
-
     if (index === responses.length - 1)
       writeResult(result)
   })

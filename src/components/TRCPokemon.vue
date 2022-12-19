@@ -9,7 +9,6 @@ const props = defineProps({
     required: false,
   },
 })
-
 const raids: any = inject('raids')
 
 const raid = computed(() => {

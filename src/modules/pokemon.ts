@@ -61,11 +61,14 @@ const inferDamageType = (raid: any) => {
   return maxType
 }
 
-const getTauntSuggestion = (raid: any) => {
+const getTauntSuggestion = (raid: any, countOnly = false) => {
   const count = (raid.moves.concat(raid.additional_moves || [])).reduce((acc: any, move: any) => {
     acc[move.category] += 1
     return acc
   }, { physical: 0, status: 0, special: 0 })
+
+  if (countOnly)
+    return `${count.status}`
 
   let suggestion = ''
   switch (count.status) {

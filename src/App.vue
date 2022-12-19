@@ -1,7 +1,22 @@
 <script setup lang="ts">
-// https://github.com/vueuse/head
-// you can use this to manipulate the document head in any components,
-// they will be rendered correctly in the html results with vite-ssg
+const modules = import.meta.glob('~/assets/images/**/*.png')
+const loaded = ref(false)
+const raid = useRaidStore()
+
+const count = ref(Object.keys(modules).length)
+for (const path in modules) {
+  modules[path]().then(() => {
+    const p = new URL(path, import.meta.url)
+    const code = p.pathname.split('/').pop()?.split('.')[0]
+    raid.loadImage({
+      code,
+      url: p.href,
+    })
+    count.value--
+    loaded.value = count.value === 0
+  })
+}
+
 useHead({
   title: 'Tera Raid Companion',
   meta: [
@@ -22,5 +37,5 @@ useHead({
 </script>
 
 <template>
-  <RouterView />
+  <RouterView v-if="loaded" />
 </template>

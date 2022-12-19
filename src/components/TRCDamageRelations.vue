@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 const props = defineProps<{ tera: string }>()
+const sortingDefault = ref(true)
+
 const router = useRouter()
 const pokeapi = inject('pokeapi')
-const types = inject('types')
+const types: any = inject('types')
 const loading = ref<boolean>(true)
 const relations = ref<any>(null)
 const { t } = useI18n()
@@ -18,17 +20,16 @@ const getDamageFromType = (type: string) => {
   return relation ? relation.value : 1
 }
 
-const getOpacityFromType = (type: string) => {
+const getGrayscale = (type: string) => {
   const value = getDamageFromType(type)
   switch (value) {
     case 2:
-      return 100
+      return 0
     case 0.5:
-      return 25
     case 0:
-      return 10
+      return 1
     default:
-      return 50
+      return 0
   }
 }
 
@@ -48,28 +49,78 @@ watchEffect(() => {
       router.push('/')
     })
 })
+
+const sortedTypes = computed(() => {
+  if (sortingDefault.value) {
+    return types
+  }
+  else {
+    return [...types].sort((a, b) => {
+      const aVal = getDamageFromType(a)
+      const bVal = getDamageFromType(b)
+      if (aVal > bVal)
+        return -1
+
+      else if (aVal < bVal)
+        return 1
+
+      else
+        return 0
+    })
+  }
+})
 </script>
 
 <template>
-  <div v-if="loading" text-center mt-4>
+  <div v-if="loading" text-center pt-28>
     <div i-carbon-hurricane class="animate-spin ma-auto" />
     {{ t('loading.dmg_rel') }}
   </div>
-  <div v-else text-3 grid grid-cols-9 mx-2 border>
-    <div
-      v-for="item in types"
-      :key="item"
-      :class="`opacity-${getOpacityFromType(item)} ${item}`"
-      h-full
-      flex
-      flex-wrap
-    >
+  <div v-else mt-4>
+    <div flex items-center justify-center>
+      Types eff. vs&nbsp;<span capitalize>{{ props.tera }}</span>
+      <span
+        v-if="sortingDefault"
+        inline-block
+        i-carbon-automatic
+        class="ml-1"
+        @click=" sortingDefault = false"
+      />
+
+      <span
+        v-else
+        inline-block
+        i-carbon-inspection
+        class="ml-1"
+        @click=" sortingDefault = true"
+      />
+    </div>
+    <div text-3 grid grid-cols-4 gap-1>
       <div
-        rotate-180 text-left flex-1 font-mono text-10px uppercase relative overflow-hidden
+        v-for="item in sortedTypes"
+        :key="item"
+        class="item"
+        :style="{ filter: `grayscale(${getGrayscale(item)})` }"
+        flex
+        flex-wrap
       >
-        <span class="lh-10px absolute  transform-origin-bottom-left rotate-90 top--8px">{{ item }}</span>
-        <mark px-1 font-bold color-white bg-black bg-opacity-50 absolute class="rotate-180 top-50% left-50% transform -translate-x-1/2 -translate-y-1/2">{{ getDamageFromType(item) }}</mark>
+        <div>
+          <span font-mono font-bold>
+            {{ getDamageFromType(item) }}x
+          </span>
+          <img :src="useRaidStore().getImage(`${item}-min`)">
+        </div>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.item:last-child {
+  grid-column-end: -2;
+}
+
+.item:nth-last-child(2) {
+  grid-column-end: -3;
+}
+</style>
