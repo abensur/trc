@@ -28,6 +28,7 @@ specifiers:
   vite-plugin-inspect: ^0.7.11
   vite-plugin-pages: ^0.28.0
   vite-plugin-pwa: ^0.14.0
+  vite-plugin-radar: ^0.6.0
   vite-plugin-vue-component-preview: ^0.3.4
   vite-plugin-vue-inspector: ^2.0.4
   vite-plugin-vue-layouts: ^0.7.0
@@ -75,6 +76,7 @@ devDependencies:
   vite-plugin-inspect: 0.7.11_vite@4.0.2
   vite-plugin-pages: 0.28.0_vite@4.0.2
   vite-plugin-pwa: 0.14.0_vite@4.0.2
+  vite-plugin-radar: 0.6.0_vite@4.0.2
   vite-plugin-vue-component-preview: 0.3.4_vite@4.0.2
   vite-plugin-vue-inspector: 2.0.4_vite@4.0.2
   vite-plugin-vue-layouts: 0.7.0_jv2z4nfib4yzuruot6gfjyfuka
@@ -7371,6 +7373,14 @@ packages:
     transitivePeerDependencies:
       - '@types/babel__core'
       - supports-color
+    dev: true
+
+  /vite-plugin-radar/0.6.0_vite@4.0.2:
+    resolution: {integrity: sha512-/nsxB4I15Tge8vBsx4TagM5oX2hozTW7575W2Ym7ame/umlMUZfRB9sj/09wFsgCVYv4cIa2g808k74ji0Ngkw==}
+    peerDependencies:
+      vite: ^2.0.0 || ^3.0.0 || ^4.0.0
+    dependencies:
+      vite: 4.0.2
     dev: true
 
   /vite-plugin-vue-component-preview/0.3.4_vite@4.0.2:
