@@ -21,11 +21,7 @@ const teraValue = computed({
       <TRCSelect v-model="teraValue" ml-2 flex-1 :list="SelectList.TYPES" />
     </header>
 
-    <TRCRaidDetail :pokemon="pokemon" />
+    <TRCRaidDetail :pokemon="pokemon" :tera="tera" />
     <TRCDamageRelations :tera="tera" />
   </div>
 </template>
-
-<style lang="less">
-
-</style>

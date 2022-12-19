@@ -41,12 +41,20 @@ const getAbilityOpacity = (ability: string) => {
       return ['', '']
   }
 }
+
+console.log(props.tera)
 </script>
 
 <template>
   <div>
     <header flex flex-wrap items-start pb-2>
-      <div>
+      <div relative>
+        <img
+          v-if="tera"
+          w-10 h-10
+          absolute
+          :src="raidStore.getImage(`${tera}-tera-min`)"
+        >
         <a capitalize color-blue :href="currentRaid.url" target="_blank">
           <img min-h-129px class="top-2.5" w-130px :src="raidStore.getImage(currentRaid.code)" :alt="pokemon">
           <div pt-2 flex items-center justify-center>

@@ -1,22 +1,4 @@
 <script setup lang="ts">
-const modules = import.meta.glob('~/assets/images/**/*.png')
-const loaded = ref(false)
-const raid = useRaidStore()
-
-const count = ref(Object.keys(modules).length)
-for (const path in modules) {
-  modules[path]().then(() => {
-    const p = new URL(path, import.meta.url)
-    const code = p.pathname.split('/').pop()?.split('.')[0]
-    raid.loadImage({
-      code,
-      url: p.href,
-    })
-    count.value--
-    loaded.value = count.value === 0
-  })
-}
-
 useHead({
   title: 'Tera Raid Companion',
   meta: [
@@ -37,5 +19,5 @@ useHead({
 </script>
 
 <template>
-  <RouterView v-if="loaded" />
+  <RouterView />
 </template>
