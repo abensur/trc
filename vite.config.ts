@@ -15,9 +15,6 @@ import Unocss from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 
 export default defineConfig({
-  assetsInclude: [
-    'src/assets/**/*.png',
-  ],
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
