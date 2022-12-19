@@ -13,6 +13,6 @@
     "
   >
     <TRCMenu flex-44px />
-    <RouterView flex-1 />
+    <RouterView flex-1 pb-8 />
   </main>
 </template>

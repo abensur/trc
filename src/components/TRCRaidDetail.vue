@@ -41,8 +41,6 @@ const getAbilityOpacity = (ability: string) => {
       return ['', '']
   }
 }
-
-console.log(props.tera)
 </script>
 
 <template>
