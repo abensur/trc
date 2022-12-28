@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { SelectList } from '~/types'
 defineProps<{ category?: string }>()
+useHead({
+  title: 'Loots',
+})
 </script>
 
 <template>

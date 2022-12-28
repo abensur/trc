@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const { t } = useI18n()
+useHead({
+  title: '404',
+})
 </script>
 
 <template>

@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+useHead({
+  title: 'Tera Raid Companion',
+})
+</script>
+
 <template>
   <div px-2 pt-2 grid grid-cols-1 gap-2 items-start>
     <div shadow pb-2 dark:shadow-white ma-auto>

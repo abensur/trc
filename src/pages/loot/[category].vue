@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 const props = defineProps<{ category: string }>()
+useHead({
+  title: props.category,
+})
 
 const drops = inject('drops')
 

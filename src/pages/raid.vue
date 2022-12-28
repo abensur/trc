@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { SelectList } from '~/types'
 defineProps<{ pokemon?: string }>()
+useHead({
+  title: 'Raids',
+})
 const router = useRouter()
 const raids: any = inject('raids')
 const drops: any = inject('drops')

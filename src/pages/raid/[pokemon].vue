@@ -1,6 +1,17 @@
 <script lang="ts" setup>
 import { SelectList } from '~/types'
-defineProps<{ pokemon: string; tera?: string }>()
+const props = defineProps<{ pokemon: string; tera?: string }>()
+const raids: any = inject('raids')
+const currentRaid = ref<any>(raids.find((it: any) => it.name === props.pokemon))
+const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
+watchEffect(() => {
+  useHead({
+    title: capitalize(props.pokemon),
+  })
+  useFavicon(
+    useRaidStore().getImage(`${currentRaid.value.code}`),
+  )
+})
 </script>
 
 <template>
